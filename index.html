@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آزمایشگاه مجموعه‌ها</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>آزمایشگاه مجموعه‌ها</h1>
+        </header>
+
+        <main>
+            <section id="controls">
+                <button id="startBtn" class="btn btn-primary">شروع عملیات</button>
+                <button id="showSetsBtn" class="btn btn-secondary">نمایش همه مجموعه‌ها</button>
+                <button id="addSetBtn" class="btn btn-success">➕ مجموعه جدید</button>
+            </section>
+
+            <section id="step">
+                <!-- محتوای پویا -->
+            </section>
+
+            <section id="sets-list" class="sets-list" style="display: none;">
+                <!-- لیست مجموعه‌ها -->
+            </section>
+        </main>
+    </div>
+
+    <!-- کیبورد ریاضی -->
+    <div id="keyboard" class="keyboard">
+        <!-- ردیف اعداد -->
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('1')" class="btn-keyboard">1</button>
+            <button type="button" onclick="insertSymbol('2')" class="btn-keyboard">2</button>
+            <button type="button" onclick="insertSymbol('3')" class="btn-keyboard">3</button>
+            <button type="button" onclick="insertSymbol('4')" class="btn-keyboard">4</button>
+            <button type="button" onclick="insertSymbol('5')" class="btn-keyboard">5</button>
+        </div>
+        
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('6')" class="btn-keyboard">6</button>
+            <button type="button" onclick="insertSymbol('7')" class="btn-keyboard">7</button>
+            <button type="button" onclick="insertSymbol('8')" class="btn-keyboard">8</button>
+            <button type="button" onclick="insertSymbol('9')" class="btn-keyboard">9</button>
+            <button type="button" onclick="insertSymbol('0')" class="btn-keyboard">0</button>
+        </div>
+
+        <!-- ردیف عملیات اصلی -->
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('∪')" class="btn-keyboard">∪</button>
+            <button type="button" onclick="insertSymbol('∩')" class="btn-keyboard">∩</button>
+            <button type="button" onclick="insertSymbol('−')" class="btn-keyboard">−</button>
+            <button type="button" onclick="insertSymbol('⊂')" class="btn-keyboard">⊂</button>
+            <button type="button" onclick="insertSymbol('⊆')" class="btn-keyboard">⊆</button>
+        </div>
+        
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('∈')" class="btn-keyboard">∈</button>
+            <button type="button" onclick="insertSymbol('∉')" class="btn-keyboard">∉</button>
+            <button type="button" onclick="insertSymbol('∅')" class="btn-keyboard">∅</button>
+            <button type="button" onclick="insertSymbol('ℕ')" class="btn-keyboard">ℕ</button>
+            <button type="button" onclick="insertSymbol('𝕎')" class="btn-keyboard">𝕎</button>
+        </div>
+        
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('ℤ')" class="btn-keyboard">ℤ</button>
+            <button type="button" onclick="insertSymbol('ℚ')" class="btn-keyboard">ℚ</button>
+            <button type="button" onclick="insertSymbol('ℝ')" class="btn-keyboard">ℝ</button>
+            <button type="button" onclick="insertSymbol('ℚ′')" class="btn-keyboard">ℚ′</button>
+            <button type="button" onclick="insertSymbol('√')" class="btn-keyboard">√</button>
+        </div>
+        
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol('⁄')" class="btn-keyboard">⁄</button>
+            <button type="button" onclick="insertSymbol('{')" class="btn-keyboard">{</button>
+            <button type="button" onclick="insertSymbol('}')" class="btn-keyboard">}</button>
+            <button type="button" onclick="insertSymbol('(')" class="btn-keyboard">(</button>
+            <button type="button" onclick="insertSymbol(')')" class="btn-keyboard">)</button>
+        </div>
+
+        <div class="keyboard-row">
+            <button type="button" onclick="insertSymbol(',')" class="btn-keyboard">,</button>
+            <button type="button" onclick="insertSymbol('|')" class="btn-keyboard">|</button>
+            <button type="button" onclick="insertSymbol('π')" class="btn-keyboard">π</button>
+            <button type="button" onclick="insertSymbol('∞')" class="btn-keyboard">∞</button>
+            <button type="button" onclick="backspace()" class="btn-keyboard" style="background: #ff6b6b;">⌫</button>
+        </div>
+
+        <div class="keyboard-row">
+            <button type="button" onclick="toggleKB()" class="btn-close">✖ بستن کیبورد</button>
+        </div>
+    </div>
+
+    <button type="button" id="kbBtn" onclick="toggleKB()" class="kb-toggle">⌨️</button>
+
+    <script src="script.js"></script>
+</body>
+</html>س

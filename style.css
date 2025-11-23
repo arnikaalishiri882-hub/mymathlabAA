@@ -1,0 +1,374 @@
+:root {
+    --primary-color: #4c8bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    font-family: Tahoma, sans-serif;
+    padding: 20px;
+    background: #f0f2f5;
+    min-height: 100vh;
+    color: var(--dark-text);
+    margin: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-info {
+    background: #17a2b8;
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-type {
+    background: var(--light-bg);
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.btn-type:hover {
+    border-color: var(--primary-color);
+    transform: translateX(-3px);
+}
+
+/* کیبورد */
+#keyboard {
+    position: fixed;
+    bottom: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 10px;
+    transition: bottom 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px 10px 0 0;
+    z-index: 1000;
+    width: 95%;
+    max-width: 500px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+#keyboard.show {
+    bottom: 0;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.btn-keyboard {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex: 1;
+    min-width: 40px;
+}
+
+.btn-keyboard:hover {
+    background: #5a6268;
+}
+
+.btn-close {
+    background: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    flex: 1;
+}
+
+#kbBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+#kbBtn:hover {
+    transform: scale(1.1);
+}
+
+/* استایل‌های عمومی */
+.step-container {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-right: 3px solid var(--primary-color);
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.error-message {
+    background: #fee;
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+.success-message {
+    background: #efe;
+    border: 1px solid var(--success-color);
+    color: var(--success-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+/* لیست مجموعه‌ها */
+.sets-list {
+    background: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.set-item {
+    background: var(--light-bg);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border-right: 2px solid var(--primary-color);
+}
+
+.set-name {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.set-actions {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+/* عملیات */
+.operations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.btn-operation {
+    background: var(--light-bg);
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: right;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-operation:hover {
+    border-color: var(--primary-color);
+    transform: translateX(-3px);
+}
+
+/* نمودار ون */
+.venn-container {
+    margin: 20px 0;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+}
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.5;
+    border: 2px solid rgba(255,255,255,0.8);
+}
+
+.circle-label {
+    position: absolute;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+    z-index: 10;
+    background: rgba(255,255,255,0.9);
+    padding: 4px 8px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+/* محور اعداد */
+.axis-container {
+    margin: 15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+    overflow-x: auto;
+}
+
+.axis-line {
+    position: relative;
+    height: 50px;
+    border-bottom: 2px solid #333;
+    margin: 15px 0;
+    min-width: 500px;
+}
+
+.axis-number {
+    position: absolute;
+    bottom: -20px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.axis-point {
+    position: absolute;
+    bottom: -8px;
+    transform: translateX(-50%);
+    font-size: 16px;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    #controls {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    #keyboard {
+        width: 98%;
+    }
+    
+    .btn-keyboard {
+        font-size: 14px;
+        padding: 8px 4px;
+    }
+    
+    .venn-container {
+        height: 250px;
+    }
+}
